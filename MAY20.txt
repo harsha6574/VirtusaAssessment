@@ -1,0 +1,118 @@
+
+					ARRAY LIST
+
+import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+public class ArrayList1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Integer> num=new ArrayList<>();
+		num.add(22);
+		num.add(52);
+		num.add(12);
+		num.add(67);
+		num.add(32);
+		System.out.println("List:"+num);
+		num.set(2,9);
+		System.out.println(" Inserting Element at index 2nd"+num);
+		System.out.println("Fetching 3rd index element "+num.get(3));
+		System.out.println("list is empty or not"+" "+num.isEmpty());
+		System.out.println(" size of the list is"+" "+num.size());
+		num.clear();
+		System.out.println("after clearing all elements"+" "+num);
+	}
+
+}
+OUTPUT:-
+	List:[22, 52, 12, 67, 32]
+        Inserting Element at index 2nd[22, 52, 9, 67, 32]
+        Fetching 3rd index element 67
+        list is empty or not false
+        size of the list is 5
+        after clearing all elements []
+
+
+						LINKED LIST
+
+import java.util.*;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Comparator;
+public class Linked {
+	public static void main(String[] args) {
+      LinkedList<String> lang=new LinkedList<>();
+      lang.add("java");
+      lang.add("python");
+      lang.add("c");
+      lang.add("sql");
+      lang.add(1,"c++");
+      System.out.println("linkedlist is:"+lang);
+      lang.set(3,"HTML");
+      System.out.println("Inserting Element at 3rd:"+lang);
+      System.out.println("item is:"+lang.get(2));
+      System.out.println("Size of the list is :"+lang.size());
+      String l=lang.remove(3);
+      System.out.println("removed item is:"+l);
+      System.out.println("linklist is:"+lang);
+      System.out.println("list is empty or not:"+lang.isEmpty());
+      lang.clear();
+      System.out.println("After clearing all elements"+lang);
+     
+      
+}
+}
+OUTPUT:-
+	linkedlist is:[java, c++, python, c, sql]
+	Inserting Element at 3rd:[java, c++, python, HTML, sql]
+	item is:python
+	Size of the list is :5
+	removed item is:HTML
+	linklist is:[java, c++, python, sql]
+	list is empty or not:false
+	After clearing all elements[]
+
+							PRIORITYQUEUE
+
+import java.util.*;
+import java.util.ArrayList;
+public class Demo2 {
+	public static void main(String[] args) {
+		PriorityQueue<Integer>num=new PriorityQueue<>();
+		num.add(62);
+		num.add(4);
+		num.add(6);
+		num.add(8);
+		num.add(10);
+		System.out.println("Queue"+num);
+		int i=num.size();
+		System.out.println("Size of Queue is:"+i);
+		num.offer(20);
+		System.out.println("Updated Queue"+num);
+		int a=num.peek();
+		System.out.println("Peek element is:"+a);
+		
+		int b=num.poll();
+		System.out.println("Pool element is:"+b);
+		System.out.println("After pool:"+num);
+		int rem=num.remove();
+		System.out.println("After remove"+num);
+		System.out.println("Queue is empty or not:"+num.isEmpty());
+		num.clear();
+		System.out.println("After clearing Queue"+num);
+		
+	}
+
+}
+OUTPUT:-
+	Queue[4, 8, 6, 62, 10]
+	Size of Queue is:5
+	Updated Queue[4, 8, 6, 62, 10, 20]
+	Peek element is:4
+	Pool element is:4
+	After pool:[6, 8, 20, 62, 10]
+	After remove[8, 10, 20, 62]
+	Queue is empty or not:false
+	After clearing Queue[]
+

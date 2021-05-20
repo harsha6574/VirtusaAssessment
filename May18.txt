@@ -1,0 +1,215 @@
+**************SINGLE LEVEL INHERITANCE********************
+public class College {
+String facultyName="Ravi";
+String subject="Java";
+public void teaching()
+{
+	System.out.println(facultyName+"is teaching"+subject);
+}
+}
+public class Student extends College{
+public void learning()
+{
+	System.out.println("Learning"+subject+"in college");
+}
+}
+public class Run {
+public static void main(String args[])
+{
+	Student s1=new Student();
+	s1.teaching();
+	s1.learning();
+}
+}
+***************MULTILEVEL INHERITANCE***********************
+public class Flipkart {
+	 String productName="iphone 13";
+	 double cost=8000.5;
+	 
+	 public void placeOrder() {
+		 System.out.println("Your order:"+productName+"placed Successfully");
+	 }
+
+}
+public class OrderedStatus extends Flipkart{
+	
+	public void packed()
+	{
+		System.out.println(productName+"is packed");
+	}
+	public void Shipped()
+	{
+		System.out.println(productName+"is Shipped");
+	}
+}
+ class FinalStatus extends OrderedStatus {
+	 public void delivered()
+	 {
+		 System.out.println(productName+"is delivered successfully");
+	 }
+}
+public class Mytest {
+
+	public static void main(String[] args) {
+		FinalStatus f1=new FinalStatus();
+		f1.placeOrder();
+		f1.packed();
+		f1.Shipped();
+		f1.delivered();
+	}
+
+}
+*****************HIERARCHICAL INHERITANCE***************************
+public class Employee {
+ String name;
+ int id;
+ public void swipeCard()
+ {
+	 System.out.println("Swipped the card");
+ }
+}
+class TestEngineer extends Employee {
+	 TestEngineer(String name,int id)
+	 {
+		 this.name=name;
+		 this.id=id;
+	 }
+	 public void writtingTestCase()
+	 {
+		 System.out.println(name+"Writting test cases");
+	 }
+}
+class Developer extends Employee {
+	 Developer(String name,int id){
+		 this.name=name;
+		 this.id=id;
+	 }
+	 public void writeCode()
+	 {
+		 System.out.println(name+"Writing code");
+	 }
+}
+public class Mysample {
+	public static void main(String args[]) {
+		TestEngineer t1=new TestEngineer("Sukumar",321);
+				t1.writtingTestCase();
+		Developer d1=new Developer("Rama",123);
+		d1.writeCode();
+		
+		
+	}
+
+}
+*****************MULTIPLE INHERITANCE*************************
+1)By Using implements keyword.
+
+public interface Flyable
+ {
+ void fly();
+}
+public interface Eatable {
+	void eat();
+
+}
+class Bird implements Flyable,Eatable {
+public void fly()
+{
+	System.out.println("Bird flying");
+}
+public void eat()
+{
+	System.out.println("Birds eats");
+}
+}
+public class Sample {
+	public static void main(String args[])
+	{
+		Bird b=new Bird();
+		b.eat();
+		b.fly();
+}
+}
+2)By using Extends Keyword.
+public interface Flyable
+ {
+ void fly();
+}
+public interface Eatable {
+	void eat();
+
+}
+class Bird1 extends Object implements Flyable,Eatable {
+	 public void fly()
+	 {
+		 System.out.println("Flying birds");
+	 }
+	 public void eat()
+	 {
+		 System.out.println("Eating birds");
+	 }
+
+}
+public class Sample {
+	public static void main(String args[])
+	{
+		Bird1 b1=new Bird1();
+		b1.eat();
+		b1.fly();
+	}
+
+}
+**************HYBRID INHERITANCE*************************
+interface read
+{
+    public void reading();
+}
+ 
+interface work 
+{
+    public void working();
+}
+ 
+class Employee implements read,work 
+{
+    String  firstName,lastName;
+    int age;
+ 
+    public void reading()
+    {
+        System.out.println("Employee is reading !!");
+    }
+ 
+    public void working()
+    {
+        System.out.println("Employee is working !!");
+    }
+ 
+}
+ 
+class HourlyEmployee extends Employee
+{
+    int salary = 5000, hoursWorked;
+ 
+    public int comuptePay()
+    {
+        return salary*hoursWorked;
+    }
+ 
+}
+ 
+class hybrid 
+{
+    public static void main(String[] args) 
+    {
+        HourlyEmployee emp = new HourlyEmployee();
+ 
+        emp.hoursWorked = 12;
+        emp.firstName = "John";
+        emp.lastName = "Smith";
+        emp.age = 27;
+ 
+        System.out.println(emp.comuptePay());
+ 
+    }
+}
+
